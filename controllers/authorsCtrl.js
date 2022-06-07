@@ -14,20 +14,20 @@ module.exports = {
       }
     });
   },
-  author_detail: (request, response) => {
-    const {_id} = request.params;
-    Author.findOne({_id: _id}, (error, foundAuthor) => {
-      if(error) {
-        return error;
-      } else {
-        response.render('pages/authorDetail', {
-          name: siteData.userName,
-          copyrightYear: siteData.year,
-          author: foundAuthor
-      });
-      }
-    })
-  },
+  // author_detail: (request, response) => {
+  //   const {_id} = request.params;
+  //   Author.findOne({_id: _id}, (error, foundAuthor) => {
+  //     if(error) {
+  //       return error;
+  //     } else {
+  //       response.render('pages/authorDetail', {
+  //         name: siteData.userName,
+  //         copyrightYear: siteData.year,
+  //         author: foundAuthor
+  //     });
+  //     }
+  //   })
+  // },
   author_create_post: (request, response) => {
     const {firstName, lastName, birthYear, bio} = request.body;
     const newAuthor = new Author ({
